@@ -20,4 +20,7 @@ export const card = {
             moveDmg: 30,
         },
     ],
+    weakness: ["water", "normal"],
+    resistance: ["water"],
+    retreatCost: ["normal", "normal"],
 };

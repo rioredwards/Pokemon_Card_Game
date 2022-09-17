@@ -95,8 +95,89 @@ export function renderCard(card) {
             );
             liCardMoveEnergyListItem.append(imgCardMoveEnergyIcon);
         }
-
-        // for (let moveEnergy in move)
     }
+
+    const divCardEffectivenessSection = document.createElement("div");
+    divCardEffectivenessSection.classList.add("card-effectiveness-section");
+    divCardGrid.append(divCardEffectivenessSection);
+
+    const pCardWeakness = document.createElement("p");
+    pCardWeakness.classList.add("card-weakness");
+    pCardWeakness.textContent = "weakness";
+    divCardEffectivenessSection.append(pCardWeakness);
+
+    const ulCardWeaknessEnergyList = document.createElement("ul");
+    ulCardWeaknessEnergyList.classList.add("card-effectiveness-energy-list");
+    divCardEffectivenessSection.append(ulCardWeaknessEnergyList);
+
+    for (let i = 0; i < card.weakness.length; i++) {
+        const liCardWeaknessListItem = document.createElement("li");
+        liCardWeaknessListItem.classList.add(
+            "card-effectiveness-energy-list-item"
+        );
+        ulCardWeaknessEnergyList.append(liCardWeaknessListItem);
+
+        const imgCardWeaknessEnergyIcon = document.createElement("img");
+        imgCardWeaknessEnergyIcon.src = `./Assets/Pokemon-Energy-Icons/${card.weakness[i]}.webp`;
+        imgCardWeaknessEnergyIcon.alt = `${card.weakness[i]} energy`;
+        imgCardWeaknessEnergyIcon.classList.add(
+            "card-energy-icon",
+            "energy-med"
+        );
+        liCardWeaknessListItem.append(imgCardWeaknessEnergyIcon);
+    }
+
+    const pCardResistance = document.createElement("p");
+    pCardResistance.classList.add("card-resistance");
+    pCardResistance.textContent = "resistance";
+    divCardEffectivenessSection.append(pCardResistance);
+
+    const ulCardResistanceEnergyList = document.createElement("ul");
+    ulCardResistanceEnergyList.classList.add("card-effectiveness-energy-list");
+    divCardEffectivenessSection.append(ulCardResistanceEnergyList);
+
+    for (let i = 0; i < card.resistance.length; i++) {
+        const liCardResistanceListItem = document.createElement("li");
+        liCardResistanceListItem.classList.add(
+            "card-effectiveness-energy-list-item"
+        );
+        ulCardResistanceEnergyList.append(liCardResistanceListItem);
+
+        const imgCardResistanceEnergyIcon = document.createElement("img");
+        imgCardResistanceEnergyIcon.src = `./Assets/Pokemon-Energy-Icons/${card.resistance[i]}.webp`;
+        imgCardResistanceEnergyIcon.alt = `${card.resistance[i]} energy`;
+        imgCardResistanceEnergyIcon.classList.add(
+            "card-energy-icon",
+            "energy-med"
+        );
+        liCardResistanceListItem.append(imgCardResistanceEnergyIcon);
+    }
+
+    const pCardRetreatCost = document.createElement("p");
+    pCardRetreatCost.classList.add("card-retreat-cost");
+    pCardRetreatCost.textContent = "retreat cost";
+    divCardEffectivenessSection.append(pCardRetreatCost);
+
+    const ulCardRetreatCostEnergyList = document.createElement("ul");
+    ulCardRetreatCostEnergyList.classList.add("card-effectiveness-energy-list");
+    divCardEffectivenessSection.append(ulCardRetreatCostEnergyList);
+
+    for (let i = 0; i < card.retreatCost.length; i++) {
+        const liCardRetreatCostListItem = document.createElement("li");
+        liCardRetreatCostListItem.classList.add(
+            "card-effectiveness-energy-list-item"
+        );
+        ulCardRetreatCostEnergyList.append(liCardRetreatCostListItem);
+
+        const imgCardRetreatCostEnergyIcon = document.createElement("img");
+        imgCardRetreatCostEnergyIcon.src = `./Assets/Pokemon-Energy-Icons/${card.retreatCost[i]}.webp`;
+        imgCardRetreatCostEnergyIcon.alt = `${card.retreatCost[i]} energy`;
+        imgCardRetreatCostEnergyIcon.classList.add(
+            "card-energy-icon",
+            "energy-med"
+        );
+        liCardRetreatCostListItem.append(imgCardRetreatCostEnergyIcon);
+    }
+
     return articleCardContainer;
 }
