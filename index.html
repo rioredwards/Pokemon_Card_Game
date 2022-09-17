@@ -21,72 +21,114 @@
     <body>
         <article class="card-container">
             <div class="card-grid">
-                <h3 class="card-evolution-level">Basic Pokémon</h3>
-                <h1 class="card-pokemon-name">Charmander</h1>
-                <h2 class="card-HP">50 HP</h2>
-                <img
-                    src="./Assets/Pokemon-Energy-Icons/Fire.webp"
-                    alt="Fire Energy"
-                    class="card-energy-icon energy-fire card-type"
-                />
-                <img
-                    src="./Assets/Pokemon-Pics/charmander.png"
-                    alt="Charmander"
-                    class="card-picture"
-                />
-                <p class="card-pokemon-attributes">
-                    Lizard Pokemon. Length: 2'0", Weight: 19 lbs.
-                </p>
-                <div class="card-moves-container">
-                    <div class="card-move">
-                        <img
-                            src="./Assets/Pokemon-Energy-Icons/Normal.webp"
-                            alt="Normal Energy"
-                            class="card-energy-icon energy-fire"
-                        />
-                        <p class="card-move-text">
-                            <span class="card-move-title">Scratch</span>
-                        </p>
-                        <h2 class="card-move-dmg">10</h2>
-                    </div>
-                    <div class="card-move">
-                        <img
-                            src="./Assets/Pokemon-Energy-Icons/Normal.webp"
-                            alt="Normal Energy"
-                            class="card-energy-icon energy-fire"
-                        />
-                        <p class="card-move-text">
-                            <span class="card-move-title">Ember</span>
-                            Discard 1
-                            <img
-                                src="./Assets/Pokemon-Energy-Icons/Fire.webp"
-                                alt="Fire Energy"
-                                class="card-energy-icon energy-fire"
-                            />
-                            Energy card attached to Charmander in order to use
-                            this attack.
-                        </p>
-                        <h2 class="card-move-dmg">30</h2>
-                    </div>
+                <div class="card-top">
+                    <h3 class="card-evolution-level">Basic Pokémon</h3>
+                    <h1 class="card-pokemon-name">Charmander</h1>
+                    <h2 class="card-HP">50 HP</h2>
+                    <img
+                        src="./Assets/Pokemon-Energy-Icons/Fire.webp"
+                        alt="Fire Energy"
+                        class="card-energy-icon energy-fire card-type"
+                    />
                 </div>
-                <p class="card-weakness">weakness</p>
-                <img
-                    src=""
-                    alt=""
-                    class="card-energy-icon energy-water energy-inline"
-                />
-                <p class="card-resistance">weakness</p>
-                <p class="card-retreat-cost">retreat cost</p>
-                <img
-                    src=""
-                    alt=""
-                    class="card-energy-icon energy-normal energy-inline"
-                />
-                <p class="card-description">
-                    Obviously prefers hot places. If it gets caught in the rain,
-                    steam is said to spout from the tip of its tail. LV.10 #4
-                </p>
-                <p class="card-info">Blah, blah, blah</p>
+                <div class="card-photo-section">
+                    <img
+                        src="./Assets/Pokemon-Pics/charmander.png"
+                        alt="Charmander"
+                        class="card-photo"
+                    />
+                </div>
+                <div class="card-attributes-section">
+                    <p class="card-pokemon-attributes">
+                        Lizard Pokemon. Length: 2'0", Weight: 19 lbs.
+                    </p>
+                </div>
+                <div class="card-moves-container">
+                    <ul class="card-moves-list">
+                        <li class="card-move">
+                            <ul class="card-move-energy-list">
+                                <li class="card-move-energy-list-item">
+                                    <img
+                                        src="./Assets/Pokemon-Energy-Icons/Normal.webp"
+                                        alt="Normal Energy"
+                                        class="card-energy-icon energy-med"
+                                    />
+                                </li>
+                            </ul>
+                            <p class="card-move-text">
+                                <span class="card-move-title">Scratch</span>
+                            </p>
+                            <h2 class="card-move-dmg">10</h2>
+                        </li>
+                        <li class="card-move">
+                            <ul class="card-move-energy-list">
+                                <li class="card-move-energy-list-item">
+                                    <img
+                                        src="./Assets/Pokemon-Energy-Icons/Normal.webp"
+                                        alt="Normal Energy"
+                                        class="card-energy-icon energy-med"
+                                    />
+                                </li>
+                                <li class="card-move-energy-list-item">
+                                    <img
+                                        src="./Assets/Pokemon-Energy-Icons/Normal.webp"
+                                        alt="Normal Energy"
+                                        class="card-energy-icon energy-med"
+                                    />
+                                </li>
+                            </ul>
+                            <p class="card-move-text">
+                                <span class="card-move-title">Ember </span>
+                                Discard 1
+                                <img
+                                    src="./Assets/Pokemon-Energy-Icons/Fire.webp"
+                                    alt="Fire Energy"
+                                    class="card-energy-icon energy-small"
+                                />
+                                Energy card attached to Charmander in order to
+                                use this attack.
+                            </p>
+                            <h2 class="card-move-dmg">30</h2>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-effectiveness-section">
+                    <p class="card-weakness">weakness</p>
+                    <ul class="card-effectiveness-energy-list">
+                        <li class="card-effectiveness-energy-list-item">
+                            <img
+                                src="./Assets/Pokemon-Energy-Icons/Water.webp"
+                                alt="Normal Energy"
+                                class="card-energy-icon energy-med"
+                            />
+                        </li>
+                    </ul>
+                    <p class="card-resistance">resistance</p>
+                    <ul class="card-effectiveness-energy-list"></ul>
+                    <p class="card-retreat-cost">retreat cost</p>
+                    <ul class="card-effectiveness-energy-list">
+                        <li class="card-effectiveness-energy-list-item">
+                            <img
+                                src="./Assets/Pokemon-Energy-Icons/Normal.webp"
+                                alt="Normal Energy"
+                                class="card-energy-icon energy-med"
+                            />
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-description-section">
+                    <p class="card-description">
+                        Obviously prefers hot places. If it gets caught in the
+                        rain, steam is said to spout from the tip of its tail.
+                        LV.10 #4
+                    </p>
+                </div>
+                <div class="class-info-section">
+                    <p class="card-info">
+                        Blah, blah, blah, blah, blah, blah, blah, blah, blah,
+                        blah, blah, blah, blah, b ⚫️
+                    </p>
+                </div>
             </div>
         </article>
     </body>

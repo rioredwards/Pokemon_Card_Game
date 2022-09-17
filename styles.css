@@ -3,12 +3,14 @@
     --border-color: #e8ce4a;
     --text-primary: rgb(14, 14, 14);
     --text-secondary: rgb(46, 46, 46);
+    --card-height: 54rem;
+    --card-width: calc(var(--card-height) * 0.71);
     font-family: Arial, sans-serif;
 }
 
 * {
     box-sizing: border-box;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 body {
@@ -19,8 +21,8 @@ body {
 }
 
 .card-container {
-    height: 53rem;
-    width: 38rem;
+    height: var(--card-height);
+    width: var(--card-width);
     border-radius: 2rem;
     background-color: var(--border-color);
     padding: 3%;
@@ -31,19 +33,50 @@ body {
     background-color: var(--bg-color);
     height: 100%;
     display: grid;
-    grid-template-areas:
-        ". ev ev ev ev ev . . . ."
-        ". nm nm nm nm nm hp hp tp ."
-        ". pc pc pc pc pc pc pc pc ."
-        ". at at at at at at at at ."
-        "mv mv mv mv mv mv mv mv mv mv"
-        ". wk wk wk rs rs rc rc rc . "
-        ". ds ds ds ds ds ds ds ds ."
-        "if if if if if if if if if if";
-    grid-template-rows: 4% 6% auto;
-    grid-template-columns: repeat(auto-fill, 1fr);
-    justify-content: space-around;
-    align-items: end;
+    grid-template-rows: 10% 44% 3% 26% 7% 6% auto;
+}
+
+.card-top {
+    height: 10%;
+    width: 100%;
+    padding: 3% 5%;
+    grid-column-start: 1 / 2;
+    display: grid;
+    grid-template-columns: 60% 28% auto;
+    grid-template-rows: 1fr 1fr;
+}
+
+.card-evolution-level {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.card-pokemon-name {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.card-HP {
+    grid-area: 2 / 2 / 3 / 3;
+    justify-self: end;
+}
+
+.card-type {
+    grid-area: 2 / 3 / 3 / 4;
+    justify-self: center;
+    align-self: center;
+    margin-bottom: 15%;
+}
+
+.card-energy-icon {
+    transform: scale(1.8);
+}
+
+.card-energy-icon.energy-med {
+    transform: scale(1.6);
+}
+
+.card-energy-icon.energy-small {
+    transform: scale(1);
+    transform: translateY(15%);
 }
 
 h1,
@@ -66,66 +99,101 @@ h3 {
     font-size: 0.8rem;
 }
 
-.card-evolution-level {
-    grid-area: ev;
-    align-self: end;
-}
-
-.card-pokemon-name {
-    grid-area: nm;
-}
-
-.card-HP {
-    grid-area: hp;
-}
-
-.card-type {
-    grid-area: tp;
-}
-
-.card-picture {
-    grid-area: pc;
+.card-photo-section {
     justify-self: center;
     align-self: center;
 }
 
-.card-pokemon-attributes {
-    grid-area: at;
+.card-attributes-section {
+    background-color: var(--border-color);
+    justify-self: center;
+    width: 80%;
+    text-align: center;
+    display: grid;
+    align-content: center;
 }
 
-.card-moves-container {
-    grid-area: mv;
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    padding: 0;
+    margin: 0;
+}
+
+.card-moves-list {
+    padding: 4%;
+    margin: 0;
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(auto-fill, auto);
+    justify-items: center;
 }
 
 .card-move {
-    grid-area: mv;
+    padding: 1%;
+    grid-column: 1 / -1;
+    width: 100%;
     display: grid;
-    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-columns: 16% auto 11%;
+    column-gap: 2%;
+    justify-items: center;
+    align-items: center;
+    border-bottom: 2px solid black;
+}
+
+.card-move-energy-list,
+.card-effectiveness-energy-list {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     justify-items: center;
     align-items: center;
 }
 
+.card-move-text {
+    padding: 2% 2%;
+}
+
 .card-move-title {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-weight: bold;
 }
 
-.card-weakness {
-    grid-area: wk;
+.card-effectiveness-section {
+    justify-self: start;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
 }
 
-.card-resistance {
-    grid-area: rs;
+.card-effectiveness-energy-list {
+    display: flex;
+    width: min-content;
+    gap: 50%;
+    justify-content: center;
 }
 
+.card-weakness,
+.card-resistance,
 .card-retreat-cost {
-    grid-area: rc;
+    grid-row: 1;
 }
 
 .card-description {
-    grid-area: ds;
+    margin: 1% 3%;
+    padding: 1% 1%;
+    border: 3px solid var(--border-color);
 }
 
 .card-info {
-    grid-area: if;
+    margin: 2% 3%;
 }
