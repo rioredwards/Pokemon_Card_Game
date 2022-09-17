@@ -47,5 +47,56 @@ export function renderCard(card) {
     divCardPokemonAttributes.textContent = card.attributes;
     divCardAttributesSection.append(divCardPokemonAttributes);
 
+    const divCardMovesContainer = document.createElement("div");
+    divCardMovesContainer.classList.add("card-moves-container");
+    divCardGrid.append(divCardMovesContainer);
+
+    const ulCardMovesList = document.createElement("ul");
+    ulCardMovesList.classList.add("card-moves-list");
+    divCardMovesContainer.append(ulCardMovesList);
+
+    for (let i = 0; i < card.moves.length; i++) {
+        const liCardMove = document.createElement("li");
+        liCardMove.classList.add("card-move");
+        ulCardMovesList.append(liCardMove);
+
+        const pCardMoveText = document.createElement("p");
+        pCardMoveText.classList.add("card-move-text");
+        pCardMoveText.textContent = card.moves[i].moveInfo;
+        liCardMove.append(pCardMoveText);
+
+        const spanCardMoveTitle = document.createElement("span");
+        spanCardMoveTitle.classList.add("card-move-title");
+        spanCardMoveTitle.textContent = card.moves[i].moveName;
+        pCardMoveText.prepend(spanCardMoveTitle);
+
+        const h2CardMoveDmg = document.createElement("h2");
+        h2CardMoveDmg.classList.add("card-move-dmg");
+        h2CardMoveDmg.textContent = card.moves[i].moveDmg;
+        liCardMove.append(h2CardMoveDmg);
+
+        const ulCardMoveEnergyList = document.createElement("ul");
+        ulCardMoveEnergyList.classList.add("card-move-energy-list");
+        liCardMove.append(ulCardMoveEnergyList);
+
+        for (let j = 0; j < card.moves[i].moveEnergy.length; j++) {
+            const liCardMoveEnergyListItem = document.createElement("li");
+            liCardMoveEnergyListItem.classList.add(
+                "card-move-energy-list-item"
+            );
+            ulCardMoveEnergyList.append(liCardMoveEnergyListItem);
+
+            const imgCardMoveEnergyIcon = document.createElement("img");
+            imgCardMoveEnergyIcon.src = `./Assets/Pokemon-Energy-Icons/${card.moves[i].moveEnergy[j]}.webp`;
+            imgCardMoveEnergyIcon.alt = `${card.moves[i].moveEnergy[i]} energy`;
+            imgCardMoveEnergyIcon.classList.add(
+                "card-energy-icon",
+                "energy-med"
+            );
+            liCardMoveEnergyListItem.append(imgCardMoveEnergyIcon);
+        }
+
+        // for (let moveEnergy in move)
+    }
     return articleCardContainer;
 }

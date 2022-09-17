@@ -144,10 +144,23 @@ li {
     width: 100%;
     display: grid;
     grid-template-columns: 16% auto 11%;
+    grid-auto-flow: column;
     column-gap: 2%;
     justify-items: center;
     align-items: center;
     border-bottom: 0.2rem solid black;
+}
+
+.card-move-energy-list {
+    grid-column: 1 / 2;
+}
+
+.card-move-text {
+    grid-column: 2 / 3;
+}
+
+.card-move-dmg {
+    grid-column: 3 / -1;
 }
 
 .card-move-energy-list,
