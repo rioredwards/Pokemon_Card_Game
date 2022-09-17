@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <!-- title and favicon -->
+        <title>Pokemon Card Game</title>
+
+        <!-- js -->
+        <script type="module" src="./script.js"></script>
+
+        <!-- fonts -->
+        <!-- see https://fonts.google.com/ -->
+
+        <!-- css -->
+        <link rel="stylesheet" href="./card-style.css" />
+    </head>
+    <body>
+        <article class="card-container">
+            <div class="card-grid">
+                <div class="card-top">
+                    <h3 class="card-evolution-level">Basic Pokémon</h3>
+                    <h1 class="card-pokemon-name">Charmander</h1>
+                    <h2 class="card-HP">50 HP</h2>
+                    <img
+                        src="./Assets/Pokemon-Energy-Icons/Fire.webp"
+                        alt="Fire Energy"
+                        class="card-energy-icon card-type"
+                    />
+                </div>
+                <div class="card-photo-section">
+                    <img
+                        src="./Assets/Pokemon-Pics/charmander.png"
+                        alt="Charmander"
+                        class="card-photo"
+                    />
+                </div>
+                <div class="card-attributes-section">
+                    <p class="card-pokemon-attributes">
+                        Lizard Pokemon. Length: 2'0", Weight: 19 lbs.
+                    </p>
+                </div>
+                <div class="card-moves-container">
+                    <ul class="card-moves-list">
+                        <li class="card-move">
+                            <ul class="card-move-energy-list">
+                                <li class="card-move-energy-list-item">
+                                    <img
+                                        src="./Assets/Pokemon-Energy-Icons/Normal.webp"
+                                        alt="Normal Energy"
+                                        class="card-energy-icon energy-med"
+                                    />
+                                </li>
+                            </ul>
+                            <p class="card-move-text">
+                                <span class="card-move-title">Scratch</span>
+                            </p>
+                            <h2 class="card-move-dmg">10</h2>
+                        </li>
+                        <li class="card-move">
+                            <ul class="card-move-energy-list">
+                                <li class="card-move-energy-list-item">
+                                    <img
+                                        src="./Assets/Pokemon-Energy-Icons/Normal.webp"
+                                        alt="Normal Energy"
+                                        class="card-energy-icon energy-med"
+                                    />
+                                </li>
+                                <li class="card-move-energy-list-item">
+                                    <img
+                                        src="./Assets/Pokemon-Energy-Icons/Normal.webp"
+                                        alt="Normal Energy"
+                                        class="card-energy-icon energy-med"
+                                    />
+                                </li>
+                            </ul>
+                            <p class="card-move-text">
+                                <span class="card-move-title">Ember </span>
+                                Discard 1
+                                <img
+                                    src="./Assets/Pokemon-Energy-Icons/Fire.webp"
+                                    alt="Fire Energy"
+                                    class="card-energy-icon energy-small"
+                                />
+                                Energy card attached to Charmander in order to
+                                use this attack.
+                            </p>
+                            <h2 class="card-move-dmg">30</h2>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-effectiveness-section">
+                    <p class="card-weakness">weakness</p>
+                    <ul class="card-effectiveness-energy-list">
+                        <li class="card-effectiveness-energy-list-item">
+                            <img
+                                src="./Assets/Pokemon-Energy-Icons/Water.webp"
+                                alt="Normal Energy"
+                                class="card-energy-icon energy-med"
+                            />
+                        </li>
+                    </ul>
+                    <p class="card-resistance">resistance</p>
+                    <ul class="card-effectiveness-energy-list"></ul>
+                    <p class="card-retreat-cost">retreat cost</p>
+                    <ul class="card-effectiveness-energy-list">
+                        <li class="card-effectiveness-energy-list-item">
+                            <img
+                                src="./Assets/Pokemon-Energy-Icons/Normal.webp"
+                                alt="Normal Energy"
+                                class="card-energy-icon energy-med"
+                            />
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-description-section">
+                    <p class="card-description">
+                        Obviously prefers hot places. If it gets caught in the
+                        rain, steam is said to spout from the tip of its tail.
+                        LV.10 #4
+                    </p>
+                </div>
+                <div class="class-info-section">
+                    <p class="card-info">
+                        Blah, blah, blah, blah, blah, blah, blah, blah, blah,
+                        blah, blah, blah, blah, b
+                        <img
+                            src="./Assets/Pokemon-Rarity-Icons/circle.png"
+                            alt="circle"
+                            class="card-rarity-icon"
+                        />
+                    </p>
+                </div>
+            </div>
+        </article>
+    </body>
+</html>
