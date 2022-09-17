@@ -22,26 +22,106 @@ body {
     background-color: var(--bg-color);
     height: 53rem;
     width: 38rem;
-    border-radius: 1rem;
-    background-color: rgb(255, 0, 247);
+    border-radius: 2rem;
+    background-color: var(--bg-color);
+    padding: 3%;
+    /* overflow: hidden; */
 }
 
-.card-content {
-    display: grid;
+.card-grid {
     height: 100%;
-    /* width: 100%; */
-    grid-template-rows: 10% 50% auto;
-    overflow: hidden;
+    display: grid;
+    grid-template-areas:
+        ". ev ev ev ev ev . . . ."
+        ". nm nm nm nm nm hp hp tp ."
+        ". pc pc pc pc pc pc pc pc ."
+        ". at at at at at at at at ."
+        "mv mv mv mv mv mv mv mv mv mv"
+        ". wk wk wk rs rs rc rc rc . "
+        ". ds ds ds ds ds ds ds ds ."
+        "if if if if if if if if if if";
+    grid-template-rows: 4% 6% auto;
+    grid-template-columns: repeat(auto-fill, 1fr);
+    justify-content: space-around;
+    align-items: end;
 }
 
-.card-top-section {
-    background-color: rgb(255, 0, 247);
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+    height: 100%;
 }
 
-.card-middle-section {
-    background-color: rgb(4, 255, 0);
+h3 {
+    font-size: 0.8rem;
 }
 
-.card-bottom-section {
-    background-color: blue;
+h2 {
+    font-size: 2.5rem;
+}
+
+.card-evolution-level {
+    grid-area: ev;
+    align-self: end;
+}
+
+.card-pokemon-name {
+    grid-area: nm;
+}
+
+.card-HP {
+    grid-area: hp;
+}
+
+.card-type {
+    grid-area: tp;
+}
+
+.card-picture {
+    grid-area: pc;
+    justify-self: center;
+    align-self: center;
+}
+
+.card-pokemon-attributes {
+    grid-area: at;
+}
+
+.card-moves-container {
+    grid-area: mv;
+}
+
+.card-move {
+    grid-area: mv;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.card-move-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.card-weakness {
+    grid-area: wk;
+}
+
+.card-resistance {
+    grid-area: rs;
+}
+
+.card-retreat-cost {
+    grid-area: rc;
+}
+
+.card-description {
+    grid-area: ds;
+}
+
+.card-info {
+    grid-area: if;
 }
