@@ -7,7 +7,7 @@ export const card = {
     moves: [
         {
             moveName: `Scratch`,
-            moveInfo: "Hello",
+            moveInfo: "",
             moveAction: `none`,
             moveEnergy: ["normal"],
             moveDmg: 10,
@@ -23,4 +23,10 @@ export const card = {
     weakness: ["water", "normal"],
     resistance: ["water"],
     retreatCost: ["normal", "normal"],
+    description: `Obviously prefers hot places. If it gets caught in the
+    rain, steam is said to spout from the tip of its tail.
+    LV.10 #4`,
+    info: `Blah, blah, blah, blah, blah, blah, blah, blah, blah,
+    blah, blah, blah, blah, b`,
+    rarity: "common",
 };

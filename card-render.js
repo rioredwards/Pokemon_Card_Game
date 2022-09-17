@@ -42,10 +42,10 @@ export function renderCard(card) {
     divCardAttributesSection.classList.add("card-attributes-section");
     divCardGrid.append(divCardAttributesSection);
 
-    const divCardPokemonAttributes = document.createElement("div");
-    divCardPokemonAttributes.classList.add("card-pokemon-attributes");
-    divCardPokemonAttributes.textContent = card.attributes;
-    divCardAttributesSection.append(divCardPokemonAttributes);
+    const pCardPokemonAttributes = document.createElement("p");
+    pCardPokemonAttributes.classList.add("card-pokemon-attributes");
+    pCardPokemonAttributes.textContent = card.attributes;
+    divCardAttributesSection.append(pCardPokemonAttributes);
 
     const divCardMovesContainer = document.createElement("div");
     divCardMovesContainer.classList.add("card-moves-container");
@@ -178,6 +178,30 @@ export function renderCard(card) {
         );
         liCardRetreatCostListItem.append(imgCardRetreatCostEnergyIcon);
     }
+
+    const divCardDescriptionSection = document.createElement("div");
+    divCardDescriptionSection.classList.add("card-description-section");
+    divCardGrid.append(divCardDescriptionSection);
+
+    const pCardDescription = document.createElement("p");
+    pCardDescription.classList.add("card-description");
+    pCardDescription.textContent = card.description;
+    divCardDescriptionSection.append(pCardDescription);
+
+    const divCardInfoSection = document.createElement("div");
+    divCardInfoSection.classList.add("card-Info-section");
+    divCardGrid.append(divCardInfoSection);
+
+    const pCardInfo = document.createElement("p");
+    pCardInfo.classList.add("card-info");
+    pCardInfo.textContent = card.info;
+    divCardInfoSection.append(pCardInfo);
+
+    const imgCardRarityIcon = document.createElement("img");
+    imgCardRarityIcon.src = `./Assets/Pokemon-Rarity-Icons/${card.rarity}.png`;
+    imgCardRarityIcon.alt = card.rarity;
+    imgCardRarityIcon.classList.add("card-rarity-icon");
+    pCardInfo.append(imgCardRarityIcon);
 
     return articleCardContainer;
 }
