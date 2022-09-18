@@ -1,31 +1,22 @@
-:root {
-    --bg-color: #eca57f;
-    --border-color: #e8ce4a;
-    --text-primary: rgb(14, 14, 14);
-    --text-secondary: rgb(46, 46, 46);
-    --card-height: 700px;
-    --card-width: calc(var(--card-height) * 0.71);
-    font-family: Arial, sans-serif;
-    font-size: calc((var(--card-height)) / 54);
-}
-
 * {
     box-sizing: border-box;
 }
 
-body {
-    height: 100vh;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-}
-
 .card-container {
+    --card-height: 800px;
+    --card-width: calc(var(--card-height) * 0.71);
+    --card-font-size: calc(var(--card-height) / 54);
+    --bg-color: #eca57f;
+    --border-color: #e8ce4a;
+    --text-primary: rgb(14, 14, 14);
+    --text-secondary: rgb(46, 46, 46);
+    font-family: Arial, sans-serif;
+    font-size: var(--card-font-size);
     height: var(--card-height);
     width: var(--card-width);
-    border-radius: 2rem;
+    border-radius: calc(var(--card-font-size));
     background-color: var(--border-color);
-    padding: 3%;
+    padding: calc(var(--card-font-size) * 1.1);
     /* overflow: hidden; */
 }
 
@@ -39,7 +30,7 @@ body {
 .card-top {
     height: 10%;
     width: 100%;
-    padding: 3% 5%;
+    padding: 2% 5%;
     grid-column-start: 1 / 2;
     display: grid;
     grid-template-columns: 60% 28% auto;
@@ -62,20 +53,20 @@ body {
 .card-type {
     grid-area: 2 / 3 / 3 / 4;
     justify-self: center;
-    align-self: center;
-    margin-bottom: 15%;
+    align-self: start;
+    transform: translateY(calc(-var(--card-font-size)));
 }
 
 .card-energy-icon {
-    height: 2.5rem;
+    height: calc(var(--card-font-size) * 2.7);
 }
 
 .card-energy-icon.energy-med {
-    height: 2rem;
+    height: calc(var(--card-font-size) * 2.1);
 }
 
 .card-energy-icon.energy-small {
-    height: 1.2rem;
+    height: calc(var(--card-font-size) * 1.5);
     transform: translateY(15%);
 }
 
@@ -88,15 +79,15 @@ p {
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: calc(var(--card-font-size) * 2.5);
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: calc(var(--card-font-size) * 2.6);
 }
 
 h3 {
-    font-size: 0.8rem;
+    font-size: calc(var(--card-font-size) * 1);
 }
 
 .card-photo-section {
@@ -130,7 +121,7 @@ li {
 }
 
 .card-moves-list {
-    padding: 0.2rem 1.8rem;
+    padding: calc(var(--card-font-size) * 0.1) calc(var(--card-font-size) * 2);
     margin: 0;
     height: 100%;
     display: grid;
@@ -139,7 +130,7 @@ li {
 }
 
 .card-move {
-    padding: 0.3rem;
+    padding: calc(var(--card-font-size) * 0.3);
     grid-column: 1 / -1;
     width: 100%;
     display: grid;
@@ -148,7 +139,7 @@ li {
     column-gap: 2%;
     justify-items: center;
     align-items: center;
-    border-bottom: 0.2rem solid black;
+    border-bottom: calc(var(--card-font-size) * 0.3) solid black;
 }
 
 .card-move-energy-list {
@@ -179,8 +170,9 @@ li {
 }
 
 .card-move-title {
-    font-size: 1.8rem;
+    font-size: calc(var(--card-font-size) * 2);
     font-weight: bold;
+    margin-right: 1%;
 }
 
 .card-effectiveness-section {
@@ -191,12 +183,13 @@ li {
     grid-template-rows: 1fr 1fr;
     justify-items: center;
     align-items: center;
+    margin-top: 0.1%;
 }
 
 .card-effectiveness-energy-list {
     display: flex;
     width: min-content;
-    gap: 50%;
+    gap: 20%;
     justify-content: center;
 }
 
@@ -207,18 +200,19 @@ li {
 }
 
 .card-description {
-    margin: 0.1rem 0.5rem;
-    padding: 0.2rem 0.2rem;
-    border: 0.3rem solid var(--border-color);
+    margin: 1%;
+    padding: calc(var(--card-font-size) * 0.1) calc(var(--card-font-size) * 0.5);
+    border: calc(var(--card-font-size) * 0.3) solid var(--border-color);
 }
 
 .card-info {
     height: min-content;
-    margin: 0.6rem 0.5rem;
+    margin: calc(var(--card-font-size) * 0.5) calc(var(--card-font-size) * 0.5);
 }
 
 .card-rarity-icon {
-    margin-left: 0.8rem;
-    width: 0.8rem;
+    margin-top: 0.4%;
+    margin-left: var(--card-font-size);
+    width: var(--card-font-size);
     justify-self: end;
 }

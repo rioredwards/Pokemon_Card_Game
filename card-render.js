@@ -1,3 +1,111 @@
+import { card } from "./cards-data.js";
+
+const cardElTemplates = [
+    {
+        el: "div",
+        id: "cardGrid",
+        classes: "card-grid boob",
+        parent: `cardContainer`,
+    },
+    {
+        el: "div",
+        id: "cardTop",
+        classes: "card-top",
+        parent: `cardGrid`,
+    },
+    {
+        el: "h3",
+        id: "cardEvoLvl",
+        classes: "card-evolution-level",
+        parent: `cardTop`,
+        txt: "Basic Pokémon",
+    },
+    {
+        el: "h1",
+        id: "cardName",
+        classes: "card-pokemon-name",
+        parent: `cardTop`,
+        txt: `${card.name}`,
+    },
+    {
+        el: "h2",
+        id: "cardHP",
+        classes: "card-HP",
+        parent: `cardTop`,
+        txt: `${card.hp}`,
+    },
+    {
+        el: "img",
+        id: "cardEnergyIcon1",
+        src: `./Assets/Pokemon-Energy-Icons/${card.type}.webp`,
+        alt: `${card.type}-type`,
+        classes: "card-energy-icon card-type",
+        parent: `cardTop`,
+    },
+    {
+        el: "div",
+        id: "cardPhotoSection",
+        classes: "card-photo-section",
+        parent: `cardGrid`,
+    },
+    {
+        el: "img",
+        id: "cardEnergyIcon1",
+        src: `./Assets/Pokemon-Pics/${card.name}.png`,
+        alt: `${card.name}`,
+        classes: "card-photo",
+        parent: `cardPhotoSection`,
+    },
+];
+
+export function renderCard() {
+    // Create Parent Element
+    const cardEl = document.createElement("article");
+    cardEl.classList.add("card-container");
+
+    // Create Elements
+    const cardEls = [];
+    for (let i = 0; i < cardElTemplates.length; i++) {
+        // Create Element
+        const element = document.createElement(cardElTemplates[i].el);
+        // Add ID
+        element.id = cardElTemplates[i].id;
+        // Add Classes
+        element.classList.value = cardElTemplates[i].classes;
+
+        // Element has text
+        switch (cardElTemplates[i].el) {
+            case "h1":
+            case "h2":
+            case "h3":
+            case "p":
+                element.textContent = cardElTemplates[i].txt;
+        }
+
+        // Element is img
+        if (cardElTemplates[i].el === "img") {
+            element.src = `${cardElTemplates[i].src}`;
+            element.alt = `${card.alt}`;
+        }
+        cardEls[i] = element;
+    }
+
+    // Append children to parents
+    for (let i = 0; i < cardEls.length; i++) {
+        // Find Parent Element
+        const childEl = cardEls[i];
+        const parentEl = cardEls.find(
+            (item) => item.id === cardElTemplates[i].parent
+        );
+        // Append Child Element
+        if (parentEl !== undefined) parentEl.append(childEl);
+    }
+
+    cardEl.append(cardEls[0]);
+    return cardEl;
+}
+
+/* 
 export function renderCard(card) {
     const articleCardContainer = document.createElement("article");
     articleCardContainer.classList.add("card-container");
@@ -205,3 +313,4 @@ export function renderCard(card) {
 
     return articleCardContainer;
 }
+ */

@@ -1,0 +1,19 @@
+:root {
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-section {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
