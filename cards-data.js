@@ -6,7 +6,7 @@ export const card = {
     attributes: `Lizard Pokemon. Length: 2'0", Weight: 19 lbs.`,
     moves: [
         {
-            moveName: `Scratch`,
+            moveName: `chfsd`,
             moveInfo: "",
             moveAction: `none`,
             moveEnergy: ["normal"],

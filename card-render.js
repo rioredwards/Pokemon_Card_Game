@@ -1,6 +1,6 @@
 import { card } from "./cards-data.js";
 
-const cardElTemplates = [
+const elTemplates = [
     {
         el: "div",
         id: "cardGrid",
@@ -60,49 +60,32 @@ const cardElTemplates = [
 
 export function renderCard() {
     // Create Parent Element
-    const cardEl = document.createElement("article");
-    cardEl.classList.add("card-container");
+    const cardContainer = document.createElement("article");
+    cardContainer.classList.add("card-container");
 
     // Create Elements
     const cardEls = [];
-    for (let i = 0; i < cardElTemplates.length; i++) {
+    for (let elTemplate of elTemplates) {
         // Create Element
-        const element = document.createElement(cardElTemplates[i].el);
-        // Add ID
-        element.id = cardElTemplates[i].id;
-        // Add Classes
-        element.classList.value = cardElTemplates[i].classes;
-
-        // Element has text
-        switch (cardElTemplates[i].el) {
-            case "h1":
-            case "h2":
-            case "h3":
-            case "p":
-                element.textContent = cardElTemplates[i].txt;
-        }
-
-        // Element is img
-        if (cardElTemplates[i].el === "img") {
-            element.src = `${cardElTemplates[i].src}`;
-            element.alt = `${card.alt}`;
-        }
-        cardEls[i] = element;
+        const element = document.createElement(elTemplate.el);
+        element.id = elTemplate.id || null;
+        element.classList.value = elTemplate.classes || null;
+        element.textContent = elTemplate.txt || null;
+        element.src = elTemplate.src || null;
+        element.alt = elTemplate.alt || null;
+        cardEls.push(element);
     }
 
     // Append children to parents
     for (let i = 0; i < cardEls.length; i++) {
         // Find Parent Element
-        const childEl = cardEls[i];
-        const parentEl = cardEls.find(
-            (item) => item.id === cardElTemplates[i].parent
-        );
+        const parentEl = cardEls.find((item) => item.id === cardEl.parent);
         // Append Child Element
-        if (parentEl !== undefined) parentEl.append(childEl);
+        if (parentEl !== undefined) parentEl.append(cardEl);
     }
+    cardContainer.append(cardEls[0]);
 
-    cardEl.append(cardEls[0]);
-    return cardEl;
+    return cardContainer;
 }
 
 /* 
@@ -312,5 +295,4 @@ export function renderCard(card) {
     pCardInfo.append(imgCardRarityIcon);
 
     return articleCardContainer;
-}
- */
+} */

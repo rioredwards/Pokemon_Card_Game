@@ -3,7 +3,7 @@
 }
 
 .card-container {
-    --card-height: 800px;
+    --card-height: 900px;
     --card-width: calc(var(--card-height) * 0.71);
     --card-font-size: calc(var(--card-height) / 54);
     --bg-color: #eca57f;
