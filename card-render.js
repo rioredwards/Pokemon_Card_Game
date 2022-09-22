@@ -56,6 +56,19 @@ const elTemplates = [
         classes: "card-photo",
         parent: `cardPhotoSection`,
     },
+    {
+        el: "div",
+        id: "cardAttributesSection",
+        classes: "card-attributes-section",
+        parent: `cardGrid`,
+    },
+    {
+        el: "p",
+        id: "cardPokemonAttributes",
+        classes: "card-pokemon-attributes",
+        parent: `cardAttributesSection`,
+        txt: card.attributes,
+    },
 ];
 
 export function renderCard() {
@@ -79,9 +92,12 @@ export function renderCard() {
     // Append children to parents
     for (let i = 0; i < cardEls.length; i++) {
         // Find Parent Element
-        const parentEl = cardEls.find((item) => item.id === cardEl.parent);
+        const childEl = cardEls[i];
+        const parentEl = cardEls.find(
+            (item) => item.id === elTemplates[i].parent
+        );
         // Append Child Element
-        if (parentEl !== undefined) parentEl.append(cardEl);
+        if (parentEl !== undefined) parentEl.append(childEl);
     }
     cardContainer.append(cardEls[0]);
 
