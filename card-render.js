@@ -69,6 +69,72 @@ const elTemplates = [
         parent: `cardAttributesSection`,
         txt: card.attributes,
     },
+    {
+        el: "div",
+        id: "cardMovesContainer",
+        classes: "card-moves-container",
+        parent: `cardGrid`,
+    },
+    {
+        el: "ul",
+        id: "cardMovesList",
+        classes: "card-moves-list",
+        parent: `cardMovesContainer`,
+    },
+    {
+        el: "li",
+        id: "cardMove",
+        classes: "card-move",
+        parent: `cardMovesList`,
+        num: card.moves.length,
+    },
+    {
+        el: "ul",
+        id: "cardMoveEnergyList",
+        classes: "card-move-energy-list",
+        parent: `cardMove`,
+        num: card.moves.length,
+        loopDepth: 1,
+    },
+    /* {
+        // num: card.moves,
+        el: "li",
+        id: "cardMoveEnergyListItem",
+        classes: "card-move-energy-list-item",
+        parent: `cardMoveEnergyList`,
+        num: card.moves[0].length + card.moves[1].length,
+        loopDepth: 2,
+    }, */
+    {
+        el: "p",
+        id: "cardMoveText",
+        classes: "card-move-text",
+        parent: `cardMove`,
+        txtSource: card.moves,
+        key: `moveName`,
+        num: card.moves.length,
+        loopDepth: 1,
+    },
+    {
+        el: "h2",
+        id: "cardMoveDmg",
+        classes: "card-move-dmg",
+        parent: `cardMove`,
+        txtSource: card.moves,
+        key: "moveDmg",
+        num: card.moves.length,
+        loopDepth: 1,
+    },
+    /* 
+    {
+        num: card.moves[0].moveEnergy.length,
+        el: "img",
+        id: "cardEnergyIcon2",
+        src: `./Assets/Pokemon-Energy-Icons/${card.moves[0].moveEnergy[0]}.webp`,
+        alt: `${card.name}`,
+        classes: "card-energy-icon energy-med",
+        parent: `cardMoveEnergyListItem`,
+    }, */
 ];
 
 export function renderCard() {
@@ -79,24 +145,46 @@ export function renderCard() {
     // Create Elements
     const cardEls = [];
     for (let elTemplate of elTemplates) {
-        // Create Element
-        const element = document.createElement(elTemplate.el);
-        element.id = elTemplate.id || null;
-        element.classList.value = elTemplate.classes || null;
-        element.textContent = elTemplate.txt || null;
-        element.src = elTemplate.src || null;
-        element.alt = elTemplate.alt || null;
-        cardEls.push(element);
+        let numElements = elTemplate.num || 1;
+        // Render list of elements
+        for (let i = 0; i < numElements; i++) {
+            // Create Element
+            const element = document.createElement(elTemplate.el);
+            element.src = elTemplate.src || null;
+            element.alt = elTemplate.alt || null;
+            element.src = elTemplate.src || null;
+            element.alt = elTemplate.alt || null;
+            element.dataset.parent = elTemplate.parent || null;
+            if (numElements > 1) {
+                element.id = elTemplate.id + "_" + i || null;
+                element.dataset.listNum = i;
+                if (elTemplate.txtSource) {
+                    element.textContent =
+                        elTemplate.txtSource[i][elTemplate.key];
+                }
+                if (elTemplate.loopDepth) {
+                    element.dataset.parent += `_${
+                        i % (elTemplate.loopDepth + 1)
+                    }`;
+                }
+            } else {
+                element.id = elTemplate.id || null;
+                element.textContent = elTemplate.txt || null;
+            }
+            element.classList.value = elTemplate.classes || null;
+            cardEls.push(element);
+        }
     }
 
     // Append children to parents
-    for (let i = 0; i < cardEls.length; i++) {
+    for (let childEl of cardEls) {
         // Find Parent Element
-        const childEl = cardEls[i];
         const parentEl = cardEls.find(
-            (item) => item.id === elTemplates[i].parent
+            (item) => item.id === childEl.dataset.parent
         );
+
         // Append Child Element
+        console.log(childEl, parentEl);
         if (parentEl !== undefined) parentEl.append(childEl);
     }
     cardContainer.append(cardEls[0]);
