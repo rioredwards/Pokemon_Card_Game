@@ -83,97 +83,430 @@ const elTemplates = [
     },
     {
         el: "li",
-        id: "cardMove",
+        id: "cardMove_1",
         classes: "card-move",
         parent: `cardMovesList`,
-        num: card.moves.length,
     },
     {
         el: "ul",
-        id: "cardMoveEnergyList",
+        id: "cardMoveEnergyList_1",
         classes: "card-move-energy-list",
-        parent: `cardMove`,
-        num: card.moves.length,
-        loopDepth: 1,
+        parent: `cardMove_1`,
     },
-    /* {
-        // num: card.moves,
+    {
         el: "li",
-        id: "cardMoveEnergyListItem",
+        id: "cardMoveEnergyListItem_1",
         classes: "card-move-energy-list-item",
-        parent: `cardMoveEnergyList`,
-        num: card.moves[0].length + card.moves[1].length,
-        loopDepth: 2,
-    }, */
+        parent: `cardMoveEnergyList_1`,
+    },
+    {
+        el: "img",
+        id: "cardMoveEnergyIcon_1",
+        src: `./Assets/Pokemon-Energy-Icons/${card.moves[0].moveEnergy[0]}.webp`,
+        alt: `${card.moves[0].moveEnergy[0]} Energy`,
+        classes: "card-energy-icon energy-med",
+        parent: `cardMoveEnergyList_1`,
+        exists: card.moves[0].moveEnergy[0],
+    },
+    {
+        el: "li",
+        id: "cardMoveEnergyListItem_2",
+        classes: "card-move-energy-list-item",
+        parent: `cardMoveEnergyList_1`,
+    },
+    {
+        el: "img",
+        id: "cardMoveEnergyIcon_2",
+        src: `./Assets/Pokemon-Energy-Icons/${card.moves[0].moveEnergy[1]}.webp`,
+        alt: `${card.moves[0].moveEnergy[1]} Energy`,
+        classes: "card-energy-icon energy-med",
+        parent: `cardMoveEnergyListItem_2`,
+        exists: card.moves[0].moveEnergy[1],
+    },
+    {
+        el: "li",
+        id: "cardMoveEnergyListItem_3",
+        classes: "card-move-energy-list-item",
+        parent: `cardMoveEnergyList_1`,
+    },
+    {
+        el: "img",
+        id: "cardMoveEnergyIcon_3",
+        src: `./Assets/Pokemon-Energy-Icons/${card.moves[0].moveEnergy[2]}.webp`,
+        alt: `${card.moves[0].moveEnergy[2]} Energy`,
+        classes: "card-energy-icon energy-med",
+        parent: `cardMoveEnergyListItem_3`,
+        exists: card.moves[0].moveEnergy[2],
+    },
+    {
+        el: "li",
+        id: "cardMoveEnergyListItem_4",
+        classes: "card-move-energy-list-item",
+        parent: `cardMoveEnergyList_1`,
+    },
+    {
+        el: "img",
+        id: "cardMoveEnergyIcon_4",
+        src: `./Assets/Pokemon-Energy-Icons/${card.moves[0].moveEnergy[3]}.webp`,
+        alt: `${card.moves[0].moveEnergy[3]} Energy`,
+        classes: "card-energy-icon energy-med",
+        parent: `cardMoveEnergyListItem_4`,
+        exists: card.moves[0].moveEnergy[3],
+    },
     {
         el: "p",
-        id: "cardMoveText",
+        id: "cardMoveText_1",
         classes: "card-move-text",
-        parent: `cardMove`,
-        txtSource: card.moves,
-        key: `moveName`,
-        num: card.moves.length,
-        loopDepth: 1,
+        parent: `cardMove_1`,
+        txt: card.moves[0].moveInfo,
+    },
+    {
+        el: "span",
+        id: "cardMoveTitle",
+        classes: "card-move-title",
+        parent: `cardMoveText_1`,
+        txt: card.moves[0].moveName,
+        prepend: true,
     },
     {
         el: "h2",
-        id: "cardMoveDmg",
+        id: "cardMoveDmg_1",
         classes: "card-move-dmg",
-        parent: `cardMove`,
-        txtSource: card.moves,
-        key: "moveDmg",
-        num: card.moves.length,
-        loopDepth: 1,
+        parent: `cardMove_1`,
+        txt: card.moves[0].moveDmg,
     },
-    /* 
     {
-        num: card.moves[0].moveEnergy.length,
+        el: "li",
+        id: "cardMove_2",
+        classes: "card-move",
+        parent: `cardMovesList`,
+    },
+    {
+        el: "ul",
+        id: "cardMoveEnergyList_2",
+        classes: "card-move-energy-list",
+        parent: `cardMove_2`,
+    },
+    {
+        el: "li",
+        id: "cardMoveEnergyListItem_5",
+        classes: "card-move-energy-list-item",
+        parent: `cardMoveEnergyList_2`,
+    },
+    {
         el: "img",
-        id: "cardEnergyIcon2",
-        src: `./Assets/Pokemon-Energy-Icons/${card.moves[0].moveEnergy[0]}.webp`,
-        alt: `${card.name}`,
+        id: "cardMoveEnergyIcon_5",
+        src: `./Assets/Pokemon-Energy-Icons/${card.moves[1].moveEnergy[0]}.webp`,
+        alt: `${card.moves[1].moveEnergy[0]} Energy`,
         classes: "card-energy-icon energy-med",
-        parent: `cardMoveEnergyListItem`,
-    }, */
+        parent: `cardMoveEnergyListItem_5`,
+        exists: card.moves[1].moveEnergy[0],
+    },
+    {
+        el: "li",
+        id: "cardMoveEnergyListItem_6",
+        classes: "card-move-energy-list-item",
+        parent: `cardMoveEnergyList_2`,
+    },
+    {
+        el: "img",
+        id: "cardMoveEnergyIcon_6",
+        src: `./Assets/Pokemon-Energy-Icons/${card.moves[1].moveEnergy[1]}.webp`,
+        alt: `${card.moves[1].moveEnergy[1]} Energy`,
+        classes: "card-energy-icon energy-med",
+        parent: `cardMoveEnergyListItem_6`,
+        exists: card.moves[1].moveEnergy[1],
+    },
+    {
+        el: "li",
+        id: "cardMoveEnergyListItem_7",
+        classes: "card-move-energy-list-item",
+        parent: `cardMoveEnergyList_2`,
+    },
+    {
+        el: "img",
+        id: "cardMoveEnergyIcon_7",
+        src: `./Assets/Pokemon-Energy-Icons/${card.moves[1].moveEnergy[2]}.webp`,
+        alt: `${card.moves[1].moveEnergy[2]} Energy`,
+        classes: "card-energy-icon energy-med",
+        parent: `cardMoveEnergyListItem_7`,
+        exists: card.moves[1].moveEnergy[2],
+    },
+    {
+        el: "li",
+        id: "cardMoveEnergyListItem_8",
+        classes: "card-move-energy-list-item",
+        parent: `cardMoveEnergyList_2`,
+    },
+    {
+        el: "img",
+        id: "cardMoveEnergyIcon_8",
+        src: `./Assets/Pokemon-Energy-Icons/${card.moves[1].moveEnergy[3]}.webp`,
+        alt: `${card.moves[1].moveEnergy[3]} Energy`,
+        classes: "card-energy-icon energy-med",
+        parent: `cardMoveEnergyListItem_8`,
+        exists: card.moves[1].moveEnergy[3],
+    },
+    {
+        el: "p",
+        id: "cardMoveText_2",
+        classes: "card-move-text",
+        parent: `cardMove_2`,
+        txt: card.moves[1].moveInfo,
+    },
+    {
+        el: "span",
+        id: "cardMoveTitle",
+        classes: "card-move-title",
+        parent: `cardMoveText_2`,
+        txt: card.moves[1].moveName,
+        prepend: true,
+    },
+    {
+        el: "h2",
+        id: "cardMoveDmg_2",
+        classes: "card-move-dmg",
+        parent: `cardMove_2`,
+        txt: card.moves[1].moveDmg,
+    },
+    {
+        el: "div",
+        id: "cardEffectivenessSection",
+        classes: "card-effectiveness-section",
+        parent: `cardGrid`,
+    },
+    {
+        el: "p",
+        id: "cardWeakness",
+        classes: "card-weakness",
+        parent: `cardEffectivenessSection`,
+        txt: "Weakness",
+    },
+    {
+        el: "ul",
+        id: "cardWeaknessEnergyList",
+        classes: "card-effectiveness-energy-list",
+        parent: `cardEffectivenessSection`,
+    },
+    {
+        el: "li",
+        id: "cardWeaknessEnergyListItem_1",
+        class: "card-effectiveness-energy-list-item",
+        parent: "cardWeaknessEnergyList",
+    },
+    {
+        el: "img",
+        id: "cardWeaknessEnergyIcon_1",
+        src: `./Assets/Pokemon-Energy-Icons/${card.weakness[0]}.webp`,
+        alt: `${card.weakness[0]} Energy`,
+        classes: "card-energy-icon energy-med",
+        parent: `cardWeaknessEnergyListItem_1`,
+        exists: card.weakness[0],
+    },
+    {
+        el: "li",
+        id: "cardWeaknessEnergyListItem_2",
+        class: "card-effectiveness-energy-list-item",
+        parent: "cardWeaknessEnergyList",
+    },
+    {
+        el: "img",
+        id: "cardWeaknessEnergyIcon_2",
+        src: `./Assets/Pokemon-Energy-Icons/${card.weakness[1]}.webp`,
+        alt: `${card.weakness[1]} Energy`,
+        classes: "card-energy-icon energy-med",
+        parent: `cardWeaknessEnergyListItem_2`,
+        exists: card.weakness[1],
+    },
+    {
+        el: "li",
+        id: "cardWeaknessEnergyListItem_3",
+        class: "card-effectiveness-energy-list-item",
+        parent: "cardWeaknessEnergyList",
+    },
+    {
+        el: "img",
+        id: "cardWeaknessEnergyIcon_3",
+        src: `./Assets/Pokemon-Energy-Icons/${card.weakness[2]}.webp`,
+        alt: `${card.weakness[2]} Energy`,
+        classes: "card-energy-icon energy-med",
+        parent: `cardWeaknessEnergyListItem_3`,
+        exists: card.weakness[2],
+    },
+    {
+        el: "p",
+        id: "cardResistance",
+        classes: "card-resistance",
+        parent: `cardEffectivenessSection`,
+        txt: "Resistance",
+    },
+    {
+        el: "ul",
+        id: "cardResistanceEnergyList",
+        classes: "card-effectiveness-energy-list",
+        parent: `cardEffectivenessSection`,
+    },
+    {
+        el: "li",
+        id: "cardResistanceEnergyListItem_1",
+        class: "card-effectiveness-energy-list-item",
+        parent: "cardResistanceEnergyList",
+    },
+    {
+        el: "img",
+        id: "cardResistanceEnergyIcon_1",
+        src: `./Assets/Pokemon-Energy-Icons/${card.resistance[0]}.webp`,
+        alt: `${card.resistance[0]} Energy`,
+        classes: "card-energy-icon energy-med",
+        parent: `cardResistanceEnergyListItem_1`,
+        exists: card.resistance[0],
+    },
+    {
+        el: "li",
+        id: "cardResistanceEnergyListItem_2",
+        class: "card-effectiveness-energy-list-item",
+        parent: "cardResistanceEnergyList",
+    },
+    {
+        el: "img",
+        id: "cardResistanceEnergyIcon_2",
+        src: `./Assets/Pokemon-Energy-Icons/${card.resistance[1]}.webp`,
+        alt: `${card.resistance[1]} Energy`,
+        classes: "card-energy-icon energy-med",
+        parent: `cardResistanceEnergyListItem_2`,
+        exists: card.resistance[1],
+    },
+    {
+        el: "li",
+        id: "cardResistanceEnergyListItem_3",
+        class: "card-effectiveness-energy-list-item",
+        parent: "cardResistanceEnergyList",
+    },
+    {
+        el: "img",
+        id: "cardResistanceEnergyIcon_3",
+        src: `./Assets/Pokemon-Energy-Icons/${card.resistance[2]}.webp`,
+        alt: `${card.resistance[2]} Energy`,
+        classes: "card-energy-icon energy-med",
+        parent: `cardResistanceEnergyListItem_3`,
+        exists: card.resistance[2],
+    },
+    {
+        el: "p",
+        id: "cardRetreatCost",
+        classes: "card-retreat-cost",
+        parent: `cardEffectivenessSection`,
+        txt: "Retreat Cost",
+    },
+    {
+        el: "ul",
+        id: "cardRetreatCostEnergyList",
+        classes: "card-effectiveness-energy-list",
+        parent: `cardEffectivenessSection`,
+    },
+    {
+        el: "li",
+        id: "cardRetreatCostEnergyListItem_1",
+        class: "card-effectiveness-energy-list-item",
+        parent: "cardRetreatCostEnergyList",
+    },
+    {
+        el: "img",
+        id: "cardRetreatCostEnergyIcon_1",
+        src: `./Assets/Pokemon-Energy-Icons/${card.retreatCost[0]}.webp`,
+        alt: `${card.retreatCost[0]} Energy`,
+        classes: "card-energy-icon energy-med",
+        parent: `cardRetreatCostEnergyListItem_1`,
+        exists: card.retreatCost[0],
+    },
+    {
+        el: "li",
+        id: "cardRetreatCostEnergyListItem_2",
+        class: "card-effectiveness-energy-list-item",
+        parent: "cardRetreatCostEnergyList",
+    },
+    {
+        el: "img",
+        id: "cardRetreatCostEnergyIcon_2",
+        src: `./Assets/Pokemon-Energy-Icons/${card.retreatCost[1]}.webp`,
+        alt: `${card.retreatCost[1]} Energy`,
+        classes: "card-energy-icon energy-med",
+        parent: `cardRetreatCostEnergyListItem_2`,
+        exists: card.retreatCost[1],
+    },
+    {
+        el: "li",
+        id: "cardRetreatCostEnergyListItem_3",
+        class: "card-effectiveness-energy-list-item",
+        parent: "cardRetreatCostEnergyList",
+    },
+    {
+        el: "img",
+        id: "cardRetreatCostEnergyIcon_3",
+        src: `./Assets/Pokemon-Energy-Icons/${card.retreatCost[2]}.webp`,
+        alt: `${card.retreatCost[2]} Energy`,
+        classes: "card-energy-icon energy-med",
+        parent: `cardRetreatCostEnergyListItem_3`,
+        exists: card.retreatCost[2],
+    },
+    {
+        el: "div",
+        id: "cardDescriptionSection",
+        class: "card-description-section",
+        parent: "cardGrid",
+    },
+    {
+        el: "p",
+        id: "cardDescription",
+        classes: "card-description",
+        parent: `cardDescriptionSection`,
+        txt: card.description,
+    },
+    {
+        el: "div",
+        id: "cardInfoSection",
+        class: "card-info-section",
+        parent: "cardGrid",
+    },
+    {
+        el: "p",
+        id: "cardInfo",
+        classes: "card-info",
+        parent: `cardInfoSection`,
+        txt: card.info,
+    },
+    {
+        el: "img",
+        id: "cardRarityIcon",
+        src: `./Assets/Pokemon-Rarity-Icons/${card.rarity}.png`,
+        alt: `${card.rarity} Pokemon`,
+        classes: "card-rarity-icon",
+        parent: `cardInfo`,
+        exists: card.rarity,
+    },
 ];
 
 export function renderCard() {
     // Create Parent Element
     const cardContainer = document.createElement("article");
     cardContainer.classList.add("card-container");
-
     // Create Elements
     const cardEls = [];
     for (let elTemplate of elTemplates) {
-        let numElements = elTemplate.num || 1;
-        // Render list of elements
-        for (let i = 0; i < numElements; i++) {
-            // Create Element
+        console.log(elTemplate.exists);
+
+        if (!("exists" in elTemplate) || elTemplate.exists) {
             const element = document.createElement(elTemplate.el);
-            element.src = elTemplate.src || null;
-            element.alt = elTemplate.alt || null;
+            element.id = elTemplate.id || null;
+            element.classList.value = elTemplate.classes || null;
+            element.textContent = elTemplate.txt || null;
             element.src = elTemplate.src || null;
             element.alt = elTemplate.alt || null;
             element.dataset.parent = elTemplate.parent || null;
-            if (numElements > 1) {
-                element.id = elTemplate.id + "_" + i || null;
-                element.dataset.listNum = i;
-                if (elTemplate.txtSource) {
-                    element.textContent =
-                        elTemplate.txtSource[i][elTemplate.key];
-                }
-                if (elTemplate.loopDepth) {
-                    element.dataset.parent += `_${
-                        i % (elTemplate.loopDepth + 1)
-                    }`;
-                }
-            } else {
-                element.id = elTemplate.id || null;
-                element.textContent = elTemplate.txt || null;
-            }
-            element.classList.value = elTemplate.classes || null;
+            element.dataset.prepend = elTemplate.prepend || null;
             cardEls.push(element);
         }
+        // Create Element
     }
 
     // Append children to parents
@@ -182,10 +515,15 @@ export function renderCard() {
         const parentEl = cardEls.find(
             (item) => item.id === childEl.dataset.parent
         );
-
         // Append Child Element
         console.log(childEl, parentEl);
-        if (parentEl !== undefined) parentEl.append(childEl);
+        if (parentEl !== undefined) {
+            if (childEl.dataset.prepend === "true") {
+                parentEl.prepend(childEl);
+            } else {
+                parentEl.append(childEl);
+            }
+        }
     }
     cardContainer.append(cardEls[0]);
 

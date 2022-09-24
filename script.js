@@ -9,8 +9,10 @@ function displayCard() {
     cardSectionEl.innerHTML = "";
 
     const cardEl = renderCard();
-    cardEl.style.setProperty("--card-height", "700px");
+    cardEl.style.setProperty("--card-height", "200px");
     cardSectionEl.append(cardEl);
 }
-
+// for (let i = 0; i < 2; i++) {
+//     displayCard();
+// }
 displayCard();
