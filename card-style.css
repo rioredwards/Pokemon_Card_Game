@@ -6,7 +6,6 @@
     --card-height: 900px;
     --card-width: calc(var(--card-height) * 0.71);
     --card-font-size: calc(var(--card-height) / 54);
-    --bg-color: #eca57f;
     --border-color: #e8ce4a;
     --text-primary: rgb(14, 14, 14);
     --text-secondary: rgb(46, 46, 46);
@@ -15,16 +14,22 @@
     height: var(--card-height);
     width: var(--card-width);
     border-radius: calc(var(--card-font-size));
-    background-color: var(--border-color);
     padding: calc(var(--card-font-size) * 1.1);
     /* overflow: hidden; */
 }
 
 .card-grid {
-    background-color: var(--bg-color);
     height: 100%;
     display: grid;
     grid-template-rows: 10% 44% 3% 26% 7% 6% auto;
+}
+
+.card-grid.fire {
+    background-color: #eca57f !important;
+}
+
+.card-grid.fire {
+    background-color: #85b8d3 !important;
 }
 
 .card-top {
@@ -48,6 +53,7 @@
 .card-HP {
     grid-area: 2 / 2 / 3 / 3;
     justify-self: end;
+    color: #c73d41;
 }
 
 .card-type {

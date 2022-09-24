@@ -5,7 +5,7 @@ function createCardElTemplates(card) {
         {
             el: "div",
             id: "cardGrid",
-            classes: "card-grid",
+            classes: `card-grid ` + card.type,
             parent: `cardContainer`,
         },
         {
@@ -495,7 +495,7 @@ export function renderCard(card) {
 
     // Create Parent Element
     const cardContainer = document.createElement("article");
-    cardContainer.classList.value = "card-container";
+    cardContainer.classList.value = `card-container`;
     cardContainer.id = `cardContainer_${card.name}`;
 
     // Create Elements
