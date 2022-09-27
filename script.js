@@ -7,20 +7,27 @@ const cardSectionEl = document.getElementById("cardSection");
 
 // State Variables
 const cardStyle = {
-    height: "20rem",
+    height: "30rem",
     display: "front",
 };
 
 function displayCard(card) {
     const cardEl = renderCard(card);
-    cardEl.style.setProperty("--card-height", "20rem");
+    // style.setProperty("--card-height", cardStyle.height);
+    document.documentElement.style.setProperty(
+        "--card-height",
+        cardStyle.height
+    );
     cardSectionEl.append(cardEl);
 }
 
 function loadPage() {
-    for (let card of cards) {
-        displayCard(card);
+    for (let i = 0; i < 6; i++) {
+        for (let card of cards) {
+            displayCard(card);
+        }
     }
 }
 
+loadPage();
 loadPage();

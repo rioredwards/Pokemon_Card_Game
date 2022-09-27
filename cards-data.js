@@ -34,7 +34,7 @@ const charmander = {
 const squirtle = {
     name: "Squirtle",
     evoLvl: "Basic Pokemon",
-    hp: "40",
+    hp: "50",
     type: "water",
     attributes: `Tiny Turtle Pokemon. Length: 1'8", Weight: 30 lbs.`,
     moves: [
